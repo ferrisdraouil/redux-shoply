@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import InventoryContainer from './containers/InventoryContainer';
+import { Route, Switch } from 'react-router-dom';
+import Cart from './containers/CartContainer';
+import CartContainer from './containers/CartContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Route
+          exact
+          path="/cart"
+          render={props => <CartContainer {...props} />}
+        />
+        <Route
+          exact
+          path="/"
+          render={props => <InventoryContainer {...props} />}
+        />
+        {/* <InventoryContainer /> */}
       </div>
     );
   }
