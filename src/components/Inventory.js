@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import { Link } from 'react-router-dom';
 
 class Inventory extends Component {
   render() {
@@ -9,6 +10,7 @@ class Inventory extends Component {
     }
     return (
       <div className="Inventory">
+        <Link to="/cart">Go to Cart</Link>
         <p>Items in cart: {totalItems}</p>
         {this.props.items.map(item => {
           return <Item item={item} />;

@@ -3,6 +3,7 @@ import ButtonContainer from '../containers/ButtonContainer';
 
 class Item extends Component {
   render() {
+    console.log('item props', this.props);
     return (
       <React.Fragment>
         <p>{this.props.item.name}</p>{' '}
