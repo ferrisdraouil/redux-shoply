@@ -12,14 +12,6 @@ class Cart extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //   let total = this.props.cart.reduce(
-  //     (acc, val) => acc + val.price * val.count,
-  //     0
-  //   );
-  //   this.setState({ total });
-  // }
-
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -42,9 +34,11 @@ class Cart extends Component {
   }
 
   render() {
+    console.log('CART STATE', this.state);
+    // console.log('CART props', this.props.cart);
     return (
       <div className="Cart">
-        <div>Total cost: {this.state.total.toFixed(2)}</div>
+        <div>Total cost: {this.state.total}</div>
         {this.props.cart.map(elem => {
           return (
             <div>

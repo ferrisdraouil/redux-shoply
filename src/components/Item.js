@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
 import ButtonContainer from '../containers/ButtonContainer';
+import {
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardGroup,
+  CardSubtitle,
+  CardBody
+} from 'reactstrap';
 
 class Item extends Component {
   render() {
-    console.log('item props', this.props);
     return (
-      <React.Fragment>
-        <p>{this.props.item.name}</p>{' '}
-        <img src={this.props.item.image_url} alt="#" />
-        <p>Price: ${this.props.item.price}</p>
+      <Card>
+        <CardImg
+          top
+          width="100px"
+          height="100px"
+          src={this.props.item.image_url}
+          alt="Card image cap"
+        />
+        <CardTitle>{this.props.item.name}</CardTitle>
+        <CardText>Price: ${this.props.item.price}</CardText>
         <ButtonContainer item={this.props.item} />
-      </React.Fragment>
+      </Card>
     );
   }
 }

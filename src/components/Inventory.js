@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Item from './Item';
 import { Link } from 'react-router-dom';
+import { CardGroup } from 'reactstrap';
 
 class Inventory extends Component {
   render() {
@@ -12,9 +13,11 @@ class Inventory extends Component {
       <div className="Inventory">
         <Link to="/cart">Go to Cart</Link>
         <p>Items in cart: {totalItems}</p>
-        {this.props.items.map(item => {
-          return <Item item={item} />;
-        })}
+        <CardGroup>
+          {this.props.items.map((item, idx) => {
+            return <Item item={item} key={idx} />;
+          })}
+        </CardGroup>
       </div>
     );
   }
